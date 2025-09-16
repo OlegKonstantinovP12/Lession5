@@ -150,3 +150,63 @@ func mostFrequencies(in array: [String]) -> [String] {
 
 let arrayofWords = mostFrequencies(in: ["apple", "banana", "apple", "orange", "orange"])
 print(arrayofWords)
+
+/*
+ Учитывая массив целых чисел и целочисленную цель, возвращайте индексы двух чисел таким образом, чтобы они складываются в цель.
+
+ Вы можете предположить, что каждый вход будет иметь ровно одно решение, и вы не можете использовать один и тот же элемент дважды.
+
+ Вы можете вернуть ответ в любом порядке.
+
+ Пример 1:
+
+ Вход: nums = [2,7,11,15], цель = 9
+
+ Выход: [0,1]
+
+ Объяснение: Поскольку nums[0] + nums[1] == 9, мы возвращаем [0, 1].
+
+ Пример 2:
+
+ Вход: nums = [3,2,4], target = 6
+
+ Выход: [1,2]
+
+ Пример 3:
+
+ Вход: nums = [3,3], цель = 6
+
+ Выход: [0,1]
+ */
+
+func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+    for firstIndex in 0...nums.count - 1 {
+        for secondIndex in firstIndex + 1...nums.count - 1 {
+            if nums[firstIndex] + nums[secondIndex] == target {
+                return [firstIndex, secondIndex]
+            }
+        }
+    }
+    return []
+}
+
+//Нашел это решение в Solutions к задаче, правда на Python, но адаптировал к swift
+//func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+//    var dictionary: [Int: Int] = [:]
+//    for (index, value) in nums.enumerated() {
+//        let searchingIndex = target - value
+//        if let foundedIndex = dictionary[searchingIndex] {
+//           return [foundedIndex, index]
+//        }
+//        
+//        dictionary[value] = index
+//    }
+//
+//    return []
+//}
+
+let test1 = twoSum([3,3], 6)
+let test2 = twoSum([2,7,11,15], 9)
+let test3 = twoSum([3,2,4], 6)
+
+print(test1)
