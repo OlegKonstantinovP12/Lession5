@@ -179,7 +179,7 @@ print(arrayofWords)
  Выход: [0,1]
  */
 
-func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+func twoSum(_ nums: [Int], _ target: Int) -> [Int] { // Здесь будет O(n^2)
     for firstIndex in 0...nums.count - 1 {
         for secondIndex in firstIndex + 1...nums.count - 1 {
             if nums[firstIndex] + nums[secondIndex] == target {
@@ -191,7 +191,7 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
 }
 
 //Нашел это решение в Solutions к задаче, правда на Python, но адаптировал к swift
-//func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+//func twoSum(_ nums: [Int], _ target: Int) -> [Int] { //Здесь будет O(n)
 //    var dictionary: [Int: Int] = [:]
 //    for (index, value) in nums.enumerated() {
 //        let searchingIndex = target - value
